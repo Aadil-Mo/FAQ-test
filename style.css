@@ -1,0 +1,94 @@
+/* Basic Reset & Defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+/* FAQ Styles */
+.faq-container {
+    border-top: 1px solid #eee;
+}
+
+.faq-item {
+    border-bottom: 1px solid #eee;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 18px 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+.faq-question:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-question .icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease-out;
+    color: #007bff;
+}
+
+
+.faq-answer {
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    background-color: #f8f9fa;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth transition */
+}
+
+.faq-answer p {
+     padding: 0 20px 0 20px; /* Only apply padding when open */
+     margin: 0; /* Reset margin for p inside answer */
+     color: #555;
+     font-size: 1rem;
+}
+
+/* Active state - when question is clicked */
+.faq-item.active .faq-question {
+    background-color: #e9f5ff;
+}
+
+.faq-item.active .faq-question .icon {
+   transform: rotate(45deg); /* Changes '+' to 'x' */
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Adjust as needed for content height */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
